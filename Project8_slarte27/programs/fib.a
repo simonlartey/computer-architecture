@@ -1,0 +1,18 @@
+movei 0 ra
+movei 1 rb
+movei 8 rd
+movei 1 re
+
+loop:
+add ra rb rc
+
+add rb zeros ra
+add rc zeros rb
+
+sub rd re rd
+
+braz end
+bra loop
+
+end:
+halt
