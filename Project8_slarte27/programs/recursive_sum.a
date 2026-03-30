@@ -1,0 +1,48 @@
+# ------------------------
+# Recursive Sum Program
+# Computes sum(1..N)
+# ------------------------
+
+# initialize
+movei 5 RA      # n = 5
+movei 1 RD      # constant 1 (for decrement)
+movei 0 RB      # result = 0
+movei 0 RE      # zero register (for base case check)
+
+call sum
+
+halt
+
+# ------------------------
+# function sum(n)
+# input:  RA = n
+# output: RB = result
+# ------------------------
+
+sum:
+
+# base case: if n == 0 → return 0
+sub RA RE RC
+braz base_case
+
+# recursive case
+
+push RA          # save n
+
+sub RA RD RA     # n = n - 1
+
+call sum
+
+pop RC           # restore n
+
+add RC RB RB     # RB = n + recursive result
+
+return
+
+# ------------------------
+# base case
+# ------------------------
+
+base_case:
+movei 0 RB
+return
