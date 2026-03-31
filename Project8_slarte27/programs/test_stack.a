@@ -1,0 +1,20 @@
+# Test 3: Stack + CALL
+
+movei 3 RA
+movei 4 RB
+
+push RA
+push RB
+
+call compute
+
+pop RB
+pop RA
+
+halt
+
+compute:
+add RA RB RC      # RC = 7
+sub RB RA RD      # RD = 1
+add RC RD RB      # RB = 8
+return
