@@ -1,0 +1,12 @@
+# Test 1: Arithmetic Chain
+
+movei 10 RA
+movei 5 RB
+movei 2 RC
+
+add RA RB RD      # RD = 15
+sub RD RC RE      # RE = 13
+add RE RB RA      # RA = 18
+sub RA RC RB      # RB = 16
+
+halt
