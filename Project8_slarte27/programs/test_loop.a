@@ -1,0 +1,14 @@
+# Test 2: Loop + Branch
+
+movei 0 RA
+movei 1 RB
+movei 5 RC
+
+loop:
+add RA RB RA      # RA += 1
+sub RC RB RC      # RC -= 1
+braz end
+bra loop
+
+end:
+halt
