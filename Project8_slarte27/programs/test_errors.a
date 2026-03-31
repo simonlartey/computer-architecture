@@ -1,0 +1,7 @@
+# movei 128 RA       # invalid immediate
+#move RX RB         # invalid register
+add RA RB          # missing argument
+fake RA RB RC      # invalid instruction
+
+loop?:
+halt 5
