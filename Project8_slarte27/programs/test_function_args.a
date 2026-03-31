@@ -1,0 +1,14 @@
+# Test Extension 2: Function Arguments (REGISTER-BASED)
+
+movei 3 RA
+movei 4 RB
+
+call addTwo
+
+oport RC
+halt
+
+
+addTwo:
+add RA RB RC   # RC = RA + RB = 7
+return
